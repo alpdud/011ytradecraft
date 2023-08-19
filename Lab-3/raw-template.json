@@ -1,0 +1,12 @@
+{
+    "index_patterns": ["log1*"],
+    "template": {
+        "mappings": {
+            "_source": {
+                "enabled": true
+            }, 
+            "dynamic": false,
+            "properties": {}
+        }
+    }
+}

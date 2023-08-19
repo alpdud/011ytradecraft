@@ -1,0 +1,21 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /tmp/apache_logs.txt
+    close_eof: true
+
+setup.ilm.enabled: false
+setup.template.name: "log1"
+setup.template.pattern: "log1*"
+
+setup.template.settings:
+  index.number_of_replicas: 0
+  index.number_of_shards: 1
+
+setup.template.json.enabled: true
+setup.template.json.path: "raw-template.json"
+setup.template.json.name: "log1"
+
+cloud.id: "xxxxxxxxxxx"
+cloud.auth: "username:password" 

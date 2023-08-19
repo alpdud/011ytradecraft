@@ -47,8 +47,8 @@ We will be using the same Elastic Cloud instance provisioned earlier.
  We will be using this [docker-compose.yml](docker-compose.yml) to spin up an nginx container in addition to metricbeat and hearbeat containers. 
 11. Create a directory for these files in your lab vm and run the following commands. 
     ```bash
-     mkdir apps
-     cd apps
+     mkdir -p lab2/apps
+     cd lab2/apps
      # Copy or create the docker-compose files along with the nginx and beats files)
      # Export tag to relevant version of container images.
      export TAG=8.9.1

@@ -1,0 +1,25 @@
+# # Lines below simulate module that uses prebuilt pipeline and template
+filebeat.modules:
+  - module: apache
+    access:
+      enabled: true
+      var.paths: [ "/dummy/*.log" ]
+      close_eof: true
+      
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /tmp/apache_logs.txt
+    close_eof: true
+    
+setup.template.settings:
+  index.number_of_replicas: 0
+  index.number_of_shards: 1
+
+setup.ilm.enabled: false
+setup.template.name: "filebeat"
+setup.template.pattern: "log2*"
+
+cloud.id: "xxxxxxxxxxx"
+cloud.auth: "username:password" 

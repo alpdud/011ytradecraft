@@ -1,0 +1,199 @@
+# Logs lab commands to be tested in Dev Tools in Kibana
+
+## Check out the fields _source-only index log1 (Schema on read example)
+GET log1/_search
+{
+  "size": 3,
+  "_source": false,
+  "fields": ["*"]
+}
+
+## Check out the fully indexed log2 (Schema on write example) 
+GET log2/_search
+{
+  "size": 3, 
+  "_source": false,
+  "fields": ["*"]
+}
+
+GET log1/_mapping
+
+
+## Example line from the Apache log
+## 38.99.236.50 - - [20/May/2015:21:05:27 +0000] "GET /presentations/logstash-puppetconf-2012/lib/js/head.min.js HTTP/1.1" 200 3170 "http://semicomplete.com/presentations/logstash-puppetconf-2012/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36"
+
+## Define the runtime mappings for log1. We are re-creating the parsed fields of log2 at runtime
+PUT log1/_mappings
+{
+  "runtime": {
+    "@timestamp": {
+      "type": "date"
+    },  
+    "message": {
+      "type": "keyword"
+    },
+    "source.ip": {
+      "type": "ip",
+      "script": {
+        "source": """
+          String source_ip=grok('%{IP:source_ip}').extract(params["_source"].message)?.source_ip;
+          if (source_ip != null) emit(source_ip);
+        """
+      }
+    },
+    "http.request.method": {
+      "type": "keyword",
+      "script": {
+        "source": """
+        String verb=dissect('%{} "%{verb} %{} HTTP/%{}" %{} %{}').extract(params["_source"].message)?.verb;
+        if (verb != null) emit(verb);
+        """
+      }
+    }
+  }
+}
+
+## View the old and the new runtime fields in log1
+GET log1/_search
+{
+  "size": 3, 
+  "_source": false,
+  "fields": ["*"]
+}
+
+## Run SQL query that uses runtime fields from log1
+POST _sql?format=txt
+{
+  "query": """
+  SELECT "source.ip", "http.request.method", COUNT(*) AS count FROM log1 
+  WHERE "http.request.method" = 'POST'
+  GROUP BY source.ip, http.request.method 
+  ORDER BY count DESC 
+  """
+}
+
+## Run SQL query from log2 that produces identical results to the previos query
+POST _sql?format=txt
+{
+  "query": """
+  SELECT "source.ip", "http.request.method", COUNT(*) AS count FROM log2 
+  WHERE "http.request.method" = 'POST'
+  GROUP BY source.ip, http.request.method 
+  ORDER BY count DESC 
+  """
+}
+
+## Translate the SQL query into an equivalent Elasticsearch query for performance analysis
+POST _sql/translate
+{
+  "query": """
+  SELECT "source.ip", "http.request.method", COUNT(*) AS count FROM log1 
+  WHERE "http.request.method" = 'POST'
+  GROUP BY source.ip, http.request.method 
+  ORDER BY count DESC 
+  """
+}
+
+## Create index log3 and define mappings for schema on write. "DELETE log3" it if exists
+PUT log3
+{ 
+  "settings": {
+    "number_of_replicas": 0,
+    "number_of_shards": 1
+  },
+  "mappings": { 
+    "_source": {
+      "enabled": true
+    }, 
+    "dynamic": false,
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },  
+      "message": {
+        "type": "text"
+      },
+      "source": {
+        "properties": {
+          "ip": {
+            "type": "ip"
+          }
+        }
+      },
+      "http": {
+        "properties": {
+          "request": {
+            "properties": {
+              "method": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+## Create the ingest pipeline that creates the two fields
+PUT _ingest/pipeline/log3_pipeline
+{
+  "processors": [
+    {
+      "grok": {
+        "field": "message",
+        "patterns": [
+          "%{IP:source.ip}"
+        ]
+      }
+    },
+    {
+      "dissect": {
+        "field": "message",
+        "pattern": "%{} \"%{http.request.method} %{} HTTP/%{}\" %{} %{}"
+      }
+    }
+  ]
+}
+
+## Reindex log1 into log3 using log3_pipeline to process the records
+POST _reindex
+{
+  "source": {
+    "index": "log1"
+  },
+  "dest": {
+    "index": "log3",
+    "pipeline": "log3_pipeline"
+  }
+}
+
+## Check out the new reindexed log3 (schema-on-write) 
+GET log3/_search
+{
+  "size": 3, 
+  "_source": false,
+  "fields": ["*"]
+}
+
+## Search the new index using SQL 
+POST _sql?format=txt
+{
+  "query": """
+  SELECT "source.ip", "http.request.method", COUNT(*) AS count FROM log3 
+  WHERE "http.request.method" = 'POST'
+  GROUP BY source.ip, http.request.method 
+  ORDER BY count DESC 
+  """
+}
+
+## Translate it for performance testing
+POST _sql/translate
+{
+  "query": """
+  SELECT "source.ip", "http.request.method", COUNT(*) AS count FROM log3 
+  WHERE "http.request.method" = 'POST'
+  GROUP BY source.ip, http.request.method 
+  ORDER BY count DESC 
+  """
+}
