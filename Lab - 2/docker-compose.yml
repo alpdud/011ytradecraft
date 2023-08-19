@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  nginx:
+    image: nginx:1.17
+    container_name: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  heartbeat:
+    image: docker.elastic.co/beats/heartbeat:${TAG}
+    container_name: heartbeat
+    command: /bin/sh -c "sleep 60; heartbeat -e setup --strict.perms=false; heartbeat -e --strict.perms=false"
+    user: root
+    secrets:
+      - source: heartbeat.yml
+        target: /usr/share/heartbeat/heartbeat.yml
+
+  metricbeat:
+    image: docker.elastic.co/beats/metricbeat:${TAG}
+    container_name: metricbeat
+    # If the setup throws errors, increase the sleep interval
+    command: /bin/sh -c "sleep 60; metricbeat -e setup --strict.perms=false; metricbeat -e -system.hostfs=/hostfs --strict.perms=false"
+    # command: /bin/sh -c "sleep 20; metricbeat -e -system.hostfs=/hostfs"
+    user: root
+    secrets:
+      - source: metricbeat.yml
+        target: /usr/share/metricbeat/metricbeat.yml
+    volumes:
+      - /proc:/hostfs/proc:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /:/hostfs:ro
+    network_mode: host
+
+secrets:
+  metricbeat.yml:
+    file: ./metricbeat.yml
+  heartbeat.yml:
+    file: ./heartbeat.yml
+  nginx.conf:
+    file: ./nginx.conf

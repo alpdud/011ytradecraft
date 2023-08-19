@@ -1,0 +1,71 @@
+metricbeat.modules:
+
+  - module: nginx
+    hosts: ["http://localhost:8080/server-status"]
+    period: 10s
+    enabled: true
+
+  - module: docker
+    metricsets:
+      - container
+      - cpu
+      - diskio
+      - healthcheck
+      - info
+      - image
+      - memory
+      - network
+    hosts: ["unix:///var/run/docker.sock"]
+    period: 10s
+    enabled: true
+
+  - module: system
+    period: 10s
+    metricsets:
+      - cpu
+      - load
+      - memory
+      - network
+      - process
+      - process_summary
+      - socket_summary
+      - core
+      - diskio
+    process.include_top_n:
+      by_cpu: 5      # include top 5 processes by CPU
+      by_memory: 5   # include top 5 processes by memory
+    enabled: true
+    cgroups: false
+
+  - module: system
+    period: 5m
+    metricsets:
+      - filesystem
+      - fsstat
+    processors:
+    - drop_event.when.regexp:
+        system.filesystem.mount_point: '^/(sys|cgroup|proc|dev|etc|host|lib|snap)($|/)'
+    enabled: true
+
+  - module: system
+    period: 10m
+    metricsets:
+      - uptime
+    enabled: true
+
+metricbeat.autodiscover:
+  providers:
+    - type: docker
+      hints.enabled: true
+
+setup.template.settings:
+  index.number_of_replicas: 0
+  index.number_of_shards: 1
+  index.codec: best_compression
+
+processors:
+  - add_host_metadata:
+  - add_docker_metadata:
+
+cloud.id: "XXXXXXXXXX"
+cloud.auth: "XXXXXXXXXX"

@@ -1,0 +1,28 @@
+heartbeat.monitors:
+- type: http
+  name: "Internal success HTTP monitor"
+  schedule: '@every 5s'
+  urls:
+    - http://nginx
+
+- type: http
+  name: "Internal not-found HTTP monitor"
+  schedule: '@every 15s'
+  urls:
+    - http://nginx/notfound
+
+processors:
+  - add_host_metadata:
+  - add_docker_metadata:
+  - add_observer_metadata:
+      cache.ttl: 5m
+      geo:
+        name: my-lab
+        location: "37.926868, -78.024902"
+        continent_name: North America
+        country_iso_code: US
+        region_name: East Coast
+        city_name: New York
+
+cloud.id: "XXXXXXXXX"
+cloud.auth: "XXXXXXXXX"
