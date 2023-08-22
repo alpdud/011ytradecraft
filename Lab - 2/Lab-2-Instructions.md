@@ -27,8 +27,8 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    cloud.id: "xxxxxxxxxxx"
    cloud.auth: "username:password" 
    ```
-5. Metricbeat comes with predefined ../assets for parsing, indexing, and visualizing your data. 
-   To load these ../assets run the below commands
+5. Metricbeat comes with predefined assets for parsing, indexing, and visualizing your data. 
+   To load these assets run the below commands
    ```bash
    cd /etc/metricbeat
    metricbeat setup -e
