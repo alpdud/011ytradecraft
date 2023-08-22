@@ -1,4 +1,4 @@
-# Lab 2
+# Lab 3
 
 We now start with Lab 3.
 
@@ -12,6 +12,8 @@ We will be using a dockerized version of Elasticsearch for this lab.
 2. We will be using a docker based setup to ship log files on two different filebeat setups.
 3. Copy the files into
     ```bash
+     
+     sudo sysctl -w vm.max_map_count=262144
      mkdir -p lab3/apps
      cd lab3/apps
      # Copy or create the docker-compose files along with the lab assets)

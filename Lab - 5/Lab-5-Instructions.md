@@ -1,4 +1,4 @@
-# Lab 2
+# Lab 5
 
 We now start with Lab 5. The pre-requisites remain the same as for Lab 1.
 
