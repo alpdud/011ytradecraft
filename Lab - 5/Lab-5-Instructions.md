@@ -10,10 +10,39 @@ This lab will cover instrumenting and observing K8 and applications on K8.
 We will be using the same Elastic Cloud instance provisioned earlier.
 
 1. Minikube Setup.
+   ```bash
+   # Install minikube
+   curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+   sudo dpkg -i minikube_latest_amd64.deb
+
+   # Start minikube
+   minikube start
+   ```
 2. Helm Setup
-3. Kube State Metrics Setup.
-4. Login to your Elastic Cloud Instance and navigate to Integrations.
-5. Elastic Agent setup on Minikube.
+   ```bash
+   # Install helm
+   curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+   ```
+3. Kubectl setup
+   ```bash
+   # Install kubectl
+   curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+   chmod +x kubectl
+   sudo mv kubectl /usr/local/bin/
+   ```
+4. Kube State Metrics Setup.
+   ```bash
+   # Install kube state metrics
+   git clone https://github.com/kubernetes/kube-state-metrics
+   cd kube-state-metrics
+   kubectl apply -f examples/standard/
+   ```
+5.  Login to your Elastic Cloud Instance and navigate to Integrations.
+      ![Alt text](../assets/image-29.png)
+    
+    Follow through the instructions and you will land at the screen which prompts you to install the Elastic agent in your kubernetes cluster.
+   
+      ![Alt text](../assets/image-30.png)
 
 ---
 ### Otel Demo App on Minikube.
@@ -49,5 +78,4 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    
    http://lab-machine-fqdn-or-url:8080/
 >                        End Of Lab 5.
-
 
