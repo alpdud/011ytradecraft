@@ -15,8 +15,8 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    ```bash
    mkdir metricbeat
    cd metricbeat
-   curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.9.1-amd64.deb
-   sudo dpkg -i metricbeat-8.9.1-amd64.deb
+   curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.8.2-amd64.deb
+   sudo dpkg -i metricbeat-8.8.2-amd64.deb
    ```
 4. Navigate to the metricbeat.yml file location and update *metricbeat.yml* to include Elastic Cloud configuration.
    ```bash
@@ -33,7 +33,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    cd /etc/metricbeat
    metricbeat setup -e
    ```
-   This will take a couple of mins to load the required ../assets into your Elastic cloud instance.
+   This will take a couple of mins to load the required assets into your Elastic cloud instance.
 6. Start the metricbeat service.
    ```bash
     sudo service metricbeat start
@@ -51,7 +51,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
      cd lab2/apps
      # Copy or create the docker-compose files along with the nginx and beats files)
      # Export tag to relevant version of container images.
-     export TAG=8.9.1
+     export TAG=8.8.2
      docker-compose up -d
     ```
 12. As data gets shipped to Elastic, you should see dashboards as below.

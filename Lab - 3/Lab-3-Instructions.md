@@ -18,7 +18,7 @@ We will be using a dockerized version of Elasticsearch for this lab.
      cd lab3/apps
      # Copy or create the docker-compose files along with the lab assets)
      # Export tag to relevant version of container images.
-     export TAG=8.9.1
+     export TAG=8.8.2
      docker-compose up -d
     ```
 4. This will bring up an Elastic and Kibana instance with filebeat configured to ship data.
