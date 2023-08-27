@@ -60,7 +60,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
 
 ### Elastic agent setup.
 
-1. We will not setup System monitoring using Elastic Agent.
+1. We will now setup System monitoring using Elastic Agent.
 2. Login to your Elastic Cloud Instance and navigate to Integrations.
    ![Alt text](../assets/image-15.png)
 3. Leave the input defaults as is and scroll to the bottom of the page.
