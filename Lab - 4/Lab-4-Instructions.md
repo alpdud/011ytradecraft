@@ -25,8 +25,11 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    Next clone the application from GitHub. [Spring Pet Clinic](https://github.com/spring-projects/spring-petclinic)
 
    ```bash
+      mkdir -p lab4
+      cd lab4
       git clone https://github.com/spring-projects/spring-petclinic.git
       cd spring-petclinic
+      export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
       ./mvnw package
       java -javaagent:/path/to/elastic-apm-agent-<version>.jar \
       -Delastic.apm.service_name=petclinic \
