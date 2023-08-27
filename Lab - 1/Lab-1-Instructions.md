@@ -120,18 +120,30 @@ ___
 
 1. Use the playwright script recorded for a website.
    ```javascript
-   step('Go to https://news.ycombinator.com/', async () => {
-    await page.goto('https://news.ycombinator.com/');
-    await page.getByRole('link', { name: 'new', exact: true }).click();
-    await page.getByRole('cell', { name: 'Hacker News new | past | comments | ask | show | jobs | submit login' }).getByRole('link', { name: 'past' }).click();
-    await page.getByRole('link', { name: 'comments', exact: true }).click();
-    await page.getByRole('link', { name: 'show' }).click();
-    await page.getByRole('link', { name: 'new', exact: true }).click();
-    await page.getByRole('cell', { name: 'Hacker News new | past | comments | ask | show | jobs | submit login' }).getByRole('link', { name: 'past' }).click();
-    await page.getByRole('link', { name: 'show' }).click();
-    await page.getByRole('link', { name: 'jobs' }).click();
-    await page.getByRole('link', { name: 'submit' }).click();
-    });
+      step('Go to https://news.ycombinator.com/', async () => {
+        await page.goto('https://news.ycombinator.com/', {
+            timeout: 0,
+            waitUntil: 'load'
+        });
+      });
+      step('Go to https://news.ycombinator.com/newest', async () => {
+        await page.goto('https://news.ycombinator.com/newest', {
+            timeout: 0,
+            waitUntil: 'load'
+        });
+      });
+      step('Go to https://news.ycombinator.com/front', async () => {
+        await page.goto('https://news.ycombinator.com/front', {
+            timeout: 0,
+            waitUntil: 'load'
+        });
+      });
+      step('Go to https://news.ycombinator.com/ask', async () => {
+        await page.goto('https://news.ycombinator.com/ask', {
+            timeout: 0,
+            waitUntil: 'load'
+        });
+      });
     ```
 2. Navigate to Monitor at Observability --> Synthetics. Enter the details as per the screenshot below
    ![Alt text](../assets/image-11.png)
