@@ -37,7 +37,11 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    cd kube-state-metrics
    kubectl apply -f examples/standard/
    ```
-5.  Login to your Elastic Cloud Instance and navigate to Integrations.
+5. Stop the existing Elastic Agent service running on the lab machine.
+   ```bash
+      sudo systemctl stop elastic-agent.service 
+   ```
+6.  Login to your Elastic Cloud Instance and navigate to Integrations.
       ![Alt text](../assets/image-29.png)
     
     Follow through the instructions and you will land at the screen which prompts you to install the Elastic agent in your kubernetes cluster.
