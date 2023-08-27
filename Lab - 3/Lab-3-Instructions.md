@@ -27,7 +27,7 @@ We will be using a dockerized version of Elasticsearch for this lab.
    ```js
       GET _data_stream
 
-      GET _cat/indices
+      GET _cat/indices?v
    ```
    You will see the two different indices and datastreams created for the apache logs.
 7. Run the following commands
