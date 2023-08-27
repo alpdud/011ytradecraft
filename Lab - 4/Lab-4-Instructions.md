@@ -22,7 +22,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
       #Java should already be installed. If not run the following command.
       sudo apt install openjdk-17-jdk -y
    ```
-   Next clone the application from GitHub. [Spring Pet Clinic](https://github.com/spring-projects/spring-petclinic)
+   You can either clone the application from GitHub [Spring Pet Clinic](https://github.com/spring-projects/spring-petclinic) and follow the steps below to build the application. 
 
    ```bash
       mkdir -p lab4
@@ -38,8 +38,21 @@ We will be using the same Elastic Cloud instance provisioned earlier.
       -Delastic.apm.environment=o11y-workshop \
       -jar target/spring-petclinic-3.1.0-SNAPSHOT.jar
    ```   
-   Once the application starts running, access the URL with the FQDN or IP address of the lab machine at port 8080.
+   __OR ALTERNATIVELY__
+
+   Skip the build part & download the jar from this repository and use it for the lab.
    
+   ```bash
+      java -javaagent:/path/to/elastic-apm-agent-<version>.jar \
+      -Delastic.apm.service_name=petclinic \
+      -Delastic.apm.secret_token=XXXXXXX \
+      -Delastic.apm.server_url=XXXXXXX \
+      -Delastic.apm.environment=o11y-workshop \
+      -jar target/spring-petclinic-3.1.0-SNAPSHOT.jar
+   ```
+   
+   Once the application starts running, access the URL with the FQDN or IP address of the lab machine at port 8080.
+
    http://lab-machine-fqdn-or-url:8080/
 
    Interact with the application. 
