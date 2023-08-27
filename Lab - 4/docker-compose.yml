@@ -6,11 +6,11 @@ services:
     container_name: config-server
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=config-server
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     ports:
@@ -23,11 +23,11 @@ services:
     container_name: discovery-server
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=discovery-server
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     depends_on:
@@ -43,11 +43,11 @@ services:
     container_name: customers-service
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=customers-service
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     depends_on:
@@ -64,11 +64,11 @@ services:
     container_name: visits-service
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=visits-service
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     depends_on:
@@ -85,11 +85,11 @@ services:
     container_name: vets-service
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=vets-service
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     depends_on:
@@ -106,11 +106,11 @@ services:
     container_name: api-gateway
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=api-gateway
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     depends_on:
@@ -127,11 +127,11 @@ services:
     container_name: admin-server
     mem_limit: 512M
     environment:
-      - ELASTIC_APM_SERVER_URL=*-*-*-*-*-*-
+      - ELASTIC_APM_SERVER_URL=placeholder-for-apm-server-url
       - ELASTIC_APM_SERVICE_NAME=admin-server
       - ELASTIC_APM_ENVIRONMENT=petclinic-prod
       - ELASTIC_APM_LOG_LEVEL=INFO
-      - ELASTIC_APM_SECRET_TOKEN=*-*-*-*-*-*-
+      - ELASTIC_APM_SECRET_TOKEN=placeholder-for-apm-token
       - ELASTIC_APM_CAPTURE_BODY=all
       - JAVA_TOOL_OPTIONS=-javaagent:/usr/agent/elastic-apm-agent.jar
     depends_on:
