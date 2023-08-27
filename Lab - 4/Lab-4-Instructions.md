@@ -67,15 +67,16 @@ We will be using the same Elastic Cloud instance provisioned earlier.
 
 5. Next lets deploy a microservices version of the petclinic application. Cleanup the previous run.
 6. Copy the [docker-compose](./docker-compose.yml) file to your lab machine.
+7. Update the docker-compose file with the relevant details and run the following commands.
    ```bash
       mkdir -p lab4/apps
       cd lab4/apps
       docker-compose up -d
    ```
-7. Once the application is up and running interact with it using the url http://lab-machine-fqdn-or-url:8080/
-8. You should see data being populated in Elastic.
+8. Once the application is up and running interact with it using the url http://lab-machine-fqdn-or-url:8080/
+9. You should see data being populated in Elastic.
    ![Alt text](../assets/image-26.png)
-9.  As you interact with it, Repeat step 4. What do you see? How does the service map look?
+10. As you interact with it, Repeat step 4. What do you see? How does the service map look?
 
 ___
 
