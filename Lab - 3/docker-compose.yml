@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.3.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:${TAG}
     container_name: elasticsearch
     environment:
       - node.name=elasticsearch
@@ -28,7 +28,7 @@ services:
 
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.3.0
+    image: docker.elastic.co/kibana/kibana:${TAG}
     container_name: kibana
     ports:
       - 5601:5601
@@ -41,7 +41,7 @@ services:
 
 
   filebeat-raw:
-    image: docker.elastic.co/beats/filebeat:8.3.0
+    image: docker.elastic.co/beats/filebeat:${TAG}
     container_name: filebeat-raw
     command: /bin/sh -c "filebeat -e --strict.perms=false --once"
     secrets:
@@ -57,7 +57,7 @@ services:
 
 
   filebeat-apache:
-    image: docker.elastic.co/beats/filebeat:8.3.0
+    image: docker.elastic.co/beats/filebeat:${TAG}
     container_name: filebeat-apache
     command: /bin/sh -c "filebeat -e setup --pipelines --strict.perms=false --modules apache; filebeat -e --strict.perms=false --once"
     secrets:

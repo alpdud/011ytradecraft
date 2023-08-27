@@ -21,5 +21,7 @@ setup.ilm.enabled: false
 setup.template.name: "filebeat"
 setup.template.pattern: "log2*"
 
-cloud.id: "xxxxxxxxxxx"
-cloud.auth: "username:password" 
+output.elasticsearch:
+  hosts: [ "elasticsearch:9200" ]
+  index: log2
+  pipeline: filebeat-8.8.2-apache-access-pipeline

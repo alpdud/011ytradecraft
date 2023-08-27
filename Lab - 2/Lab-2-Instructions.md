@@ -13,8 +13,8 @@ We will be using the same Elastic Cloud instance provisioned earlier.
 2. We are using the latest versions available. Please update the versions as per your need.
 3. Create a directory for Metricbeat download.
    ```bash
-   mkdir metricbeat
-   cd metricbeat
+   mkdir -p lab2/metricbeat
+   cd lab2/metricbeat
    curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.8.2-amd64.deb
    sudo dpkg -i metricbeat-8.8.2-amd64.deb
    ```
