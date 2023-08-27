@@ -16,6 +16,11 @@ We will be using the same Elastic Cloud instance provisioned earlier.
 2. You will see options to configure your application with Elastic APM. Go to the Java setup to begin with.
    ![Alt text](../assets/image-25.png)
    Download the agent jar as instructed on the page.
+   
+   You can run the below command on the VM to download the agent too.
+   ```bash
+      wget https://oss.sonatype.org/service/local/artifact/maven/redirect?r=releases\&g=co.elastic.apm\&a=elastic-apm-agent\&v=LATEST -O elastic-apm-agent.jar
+   ```
 3. Now login to your Lab VM and clone the spring boot application we intend to instrument.
    
    ```bash
@@ -31,7 +36,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
       cd spring-petclinic
       export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
       ./mvnw package
-      java -javaagent:/path/to/elastic-apm-agent-<version>.jar \
+      java -javaagent:/path/to/elastic-apm-agent.jar \
       -Delastic.apm.service_name=petclinic \
       -Delastic.apm.secret_token=XXXXXXX \
       -Delastic.apm.server_url=XXXXXXX \
@@ -43,7 +48,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    Skip the build part & download the jar from this repository and use it for the lab.
    
    ```bash
-      java -javaagent:/path/to/elastic-apm-agent-<version>.jar \
+      java -javaagent:/path/to/elastic-apm-agent.jar \
       -Delastic.apm.service_name=petclinic \
       -Delastic.apm.secret_token=XXXXXXX \
       -Delastic.apm.server_url=XXXXXXX \
