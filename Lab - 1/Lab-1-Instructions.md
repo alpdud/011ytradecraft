@@ -52,60 +52,10 @@ The lab walks you through installing hearbeat on the lab VM and then configuring
         
     heartbeat.monitors:
     - type: http
-    name: "Internal HTTP monitor"
-    schedule: '@every 5s'
-    urls:
-        - http://localhost:8080
-
-    - type: http
-    name: "External HTTP monitor"
-    schedule: '@every 10s'
-    urls:
-        - https://google.com
-        - https://reddit.com
-        - https://www.elastic.co
-        - https://https://timesofindia.indiatimes.com
-
-    - type: icmp
-    name: "Internal ping"
-    schedule: '@every 5s'
-    hosts:
-        - localhost
-
-    - type: icmp
-    name: "External ping"
-    schedule: '@every 10s'
-    hosts:
-        - 1.1.1.1
-        - 8.8.8.8
-
-    - type: tcp
-    name: "Internal TCP"
-    schedule: '@every 5s'
-    hosts:
-        - localhost:8080
-
-    - type: tcp
-    name: "External DNS TCP"
-    schedule: '@every 10s'
-    hosts:
-        - 1.1.1.1
-        - 8.8.4.4
-    ports:
-        - 53
-
-    processors:
-    - add_host_metadata:
-    - add_docker_metadata:
-    - add_observer_metadata:
-        cache.ttl: 5m
-        geo:
-            name: us-client
-            location: "37.926868, -78.024902"
-            continent_name: USA
-            country_iso_code: US
-            city_name: New York
-    ```
+  id: elastic-homepage
+  name: Elastic.co Homepage
+  hosts: ["https://elastic.co"]
+  schedule: '@every 10m
 
 2. Lets now create some custom visualizations too.
    ![Alt text](../assets/image-9.png)
