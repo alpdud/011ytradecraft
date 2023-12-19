@@ -42,21 +42,8 @@ We will be using the same Elastic Cloud instance provisioned earlier.
     ![Alt text](../assets/image-13.png)
 
 8. You can customize this further. Lets use docker-compose to setup nginx and monitor metrics using metricbeat.
-9. Cleanup the current setup (metricbeat only) with instructions provided by instructor.
-10. Post cleanup, we will run the following steps. Make sure to update *metricbeat.yml* & *heartbeat.yml* to include your Elastic cloud details. Similar to step 4 above.
- We will be using this [docker-compose.yml](docker-compose.yml) to spin up an nginx container in addition to metricbeat and hearbeat containers. 
-11. Create a directory for these files in your lab vm and run the following commands. 
-    ```bash
-     mkdir -p lab2/apps
-     cd lab2/apps
-     # Copy or create the docker-compose files along with the nginx and beats files)
-     # Export tag to relevant version of container images.
-     export TAG=8.8.2
-     docker-compose up -d
-    ```
-12. As data gets shipped to Elastic, you should see dashboards as below.
-    ![Alt text](../assets/image-14.png)
----
+
+
 
 ### Elastic agent setup.
 
