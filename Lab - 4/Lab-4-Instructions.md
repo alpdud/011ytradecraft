@@ -65,35 +65,8 @@ We will be using the same Elastic Cloud instance provisioned earlier.
 4. Navigate to APM screen. Check Inventory, Service Map, Traces etc. 
    What do you see? 
 
-5. Next lets deploy a microservices version of the petclinic application. Cleanup the previous run.
-6. Copy the [docker-compose](./docker-compose.yml) file to your lab machine.
-7. Update the docker-compose file with the relevant details and run the following commands.
-   ```bash
-      mkdir -p lab4/apps
-      cd lab4/apps
-      docker-compose up -d
-   ```
-8. Once the application is up and running interact with it using the url http://lab-machine-fqdn-or-url:8080/
-9. You should see data being populated in Elastic.
-   ![Alt text](../assets/image-26.png)
-10. As you interact with it, Repeat step 4. What do you see? How does the service map look?
 
-___
 
-## Alerting
-1. We have already installed Elastic Agent from Lab 2. We will be using the same setup.
-2. Run the following command
-   ```bash
-      docker run -it --name cpustress --rm containerstack/cpustress     --cpu 1 --timeout 300s --metrics-brief
-   ```
-   This will run stress-ng with cpu stressors for 5 mins.
-3. Navigate to the Inventory page.
-   ![Alt text](../assets/image-27.png)
-   You should see the spike in CPU utilization.
-4. Create an inventory rule.
-   ![Alt text](../assets/image-28.png)
-5. Create an email alert to notify on High CPU.
-
->                        End Of Lab 4.
+                        End Of Lab 4.
 
 
