@@ -52,10 +52,10 @@ The lab walks you through installing hearbeat on the lab VM and then configuring
         
     heartbeat.monitors:
     - type: http
-  id: elastic-homepage
-  name: Elastic.co Homepage
-  hosts: ["https://elastic.co"]
-  schedule: '@every 10m
+      id: elastic-homepage
+      name: Elastic.co Homepage
+      hosts: ["https://elastic.co"]
+      schedule: '@every 10m
 
 2. Lets now create some custom visualizations too.
    ![Alt text](../assets/image-9.png)
