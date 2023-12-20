@@ -12,6 +12,14 @@ Further check component template attached to the index template
 <img width="1809" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/195f670c-954b-4a51-9583-71503709e0ba">
 Check index mapping for each field within document 
 <img width="1955" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/54086e63-2670-4e86-9d83-b1701cef20e8">
+Elastic Agent integration data streams ship with a default ingest pipeline that preprocesses and enriches data before indexing. Starting in version 8.4, all default ingest pipelines call a non-existent and non-versioned "@custom" ingest pipeline. If left uncreated, this pipeline has no effect on your data. However, if added to a data stream and customized, this pipeline can be used for custom data processing, adding fields, sanitizing data, and more.
+
+<img width="254" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/17537fee-193c-403a-b0a8-8c6fe3beb93d">
+https://www.elastic.co/guide/en/elasticsearch/reference/8.11/processors.html
+https://www.elastic.co/guide/en/elasticsearch/reference/8.11/append-processor.html 
+<img width="872" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/a6cc1592-1009-4db9-8fc8-db3d5d92a392">
+<img width="1959" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/c0fd1b95-b51a-4dc6-b7e9-c0155893bef4">
+
 
 
  
