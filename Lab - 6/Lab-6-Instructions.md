@@ -58,13 +58,16 @@ Save the policy.
 
 From the Kibana main menu access Dev Tools and use Console to run the following command, which sets the poll interval for lifecycle policies to 30 seconds:
 
-
 PUT _cluster/settings
 {
   "persistent": {
     "indices.lifecycle.poll_interval": "30s"
   }
 }
+ <img width="673" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/8ea49241-a0d1-4793-ae3a-95a7b0d63ee9">
+
+
+
 Note: this is far too low for production. The default of 10 minutes is generally acceptable.
 
 
