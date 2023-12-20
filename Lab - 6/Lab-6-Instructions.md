@@ -18,13 +18,14 @@ In this lab, we will be performing the following:
 
    <img width="1609" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/e5eac0eb-5bcc-49ad-a74f-9b4d5af715e7">
 
+ <img width="1192" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/96d6a781-e28f-42e9-b9e2-78df89b628f3">
 
 
 2. Click on the “Machine Learning” link in the Analytics section on the left side of Kibana.
 
 ![](https://lh3.googleusercontent.com/lQkZvEfzqja3vXVjqhAINuWZPFJLgNoePEhLTYTzLy6KqYU4Hrz818RPsbr0M1vn_EMHruayqhsFCrnFFtLZnN9oyxn7n2HpeoM8A1HTc-H-jhUYlXDPROZUiUdaKYzvM7ENhF2zRioumodMGgkIJQ)
 
-<img width="1192" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/96d6a781-e28f-42e9-b9e2-78df89b628f3">
+
 
 
 And navigate to the Anomaly Detection section.
