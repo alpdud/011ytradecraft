@@ -57,6 +57,14 @@ The lab walks you through installing hearbeat on the lab VM and then configuring
       hosts: ["https://elastic.co"]
       schedule: '@every 10m
 
+    Make sure you follow these steps on kibana - to get visualization of legacy uptime under observability
+
+    <img width="1467" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/4bca43e2-5950-40f6-acd1-4c4b87c5de06">
+
+    <img width="586" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/703751a0-d3de-4ab3-9b98-d40072e66edd">
+
+
+
 2. Lets now create some custom visualizations too.
    ![Alt text](../assets/image-9.png)
 3. Create a visualization thats displays External HTTP Roundtrip latency per domain. It should look something like below. Ofcourse, would change for every individual.
