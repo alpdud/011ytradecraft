@@ -78,7 +78,7 @@ We will be using the same Elastic Cloud instance provisioned earlier.
 
 
   
- 11. 
+
     
 ---
 ### SLO
