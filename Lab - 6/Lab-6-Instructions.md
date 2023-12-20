@@ -14,13 +14,22 @@ Check index mapping for each field within document
 <img width="1955" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/54086e63-2670-4e86-9d83-b1701cef20e8">
 Elastic Agent integration data streams ship with a default ingest pipeline that preprocesses and enriches data before indexing. Starting in version 8.4, all default ingest pipelines call a non-existent and non-versioned "@custom" ingest pipeline. If left uncreated, this pipeline has no effect on your data. However, if added to a data stream and customized, this pipeline can be used for custom data processing, adding fields, sanitizing data, and more.
 
+
+
 <img width="254" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/17537fee-193c-403a-b0a8-8c6fe3beb93d">
 
 https://www.elastic.co/guide/en/elasticsearch/reference/8.11/processors.html
-https://www.elastic.co/guide/en/elasticsearch/reference/8.11/append-processor.html 
 
 <img width="872" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/a6cc1592-1009-4db9-8fc8-db3d5d92a392">
-<img width="1959" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/c0fd1b95-b51a-4dc6-b7e9-c0155893bef4">
+<img width="1959" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/c0fd1b95-b51a-4dc6-b7e9-c0155893bef4"> 
+
+The reroute processor allows to route a document to another target index or data stream.This processor can use both static values or reference fields from the document to determine the dataset and namespace components of the new target. 
+
+<img width="887" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/4359b5db-050f-4c30-8a41-a3d12002d904">
+https://www.elastic.co/guide/en/elasticsearch/reference/current/reroute-processor.html
+https://www.elastic.co/guide/en/fleet/8.11/data-streams.html#data-streams-naming-scheme 
+
+
 
 Index Lifecycle Management
 Start by navigating to the ILM page. Under Stack Management, click Index Lifecycle Policies."ILP"
