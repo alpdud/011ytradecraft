@@ -110,6 +110,7 @@ ___
 3. Create a multi step monitor. In the script editor, copy paste the snippet from step 1 above.
    ![Alt text](../assets/image-12.png)
 
+
 4. Create TCP/HTTP/Single Step Browser testing
 
 <img width="1721" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/8f8e7d49-cdf0-4da1-96ee-3801f406de3c">
@@ -123,4 +124,6 @@ ___
 <img width="951" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/f11bc0a2-00c4-4f69-9037-137b6363b74a">
  
 
->                        End Of Lab 1.
+
+
+>                End Of Lab 1.
