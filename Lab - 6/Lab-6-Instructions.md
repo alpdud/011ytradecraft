@@ -8,8 +8,10 @@ Click on the number of indices to explore the backing indices of this data strea
 Fruther explore corrosponding data stream property - understand health/Index Lifecycle policy/Index Template being used
 <img width="1958" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/3c5ce637-1ad7-45c5-bd64-928d189229ab">
 <img width="1957" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/5e9ccb94-8e1d-49ac-88a7-197cdc352190">
-
+Further check component template attached to the index template
 <img width="1809" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/195f670c-954b-4a51-9583-71503709e0ba">
+Check index mapping for each field within document 
+<img width="1955" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/54086e63-2670-4e86-9d83-b1701cef20e8">
 
 
  
