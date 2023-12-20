@@ -1,4 +1,4 @@
-# Lab 7
+# Lab 6
 
 We now start with Lab 7. This lab will explore machine Learning capabilities available in Elastic.
 
