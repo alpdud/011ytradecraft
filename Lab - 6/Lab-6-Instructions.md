@@ -15,11 +15,18 @@ Check index mapping for each field within document
 Elastic Agent integration data streams ship with a default ingest pipeline that preprocesses and enriches data before indexing. Starting in version 8.4, all default ingest pipelines call a non-existent and non-versioned "@custom" ingest pipeline. If left uncreated, this pipeline has no effect on your data. However, if added to a data stream and customized, this pipeline can be used for custom data processing, adding fields, sanitizing data, and more.
 
 <img width="254" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/17537fee-193c-403a-b0a8-8c6fe3beb93d">
+
 https://www.elastic.co/guide/en/elasticsearch/reference/8.11/processors.html
 https://www.elastic.co/guide/en/elasticsearch/reference/8.11/append-processor.html 
+
 <img width="872" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/a6cc1592-1009-4db9-8fc8-db3d5d92a392">
 <img width="1959" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/c0fd1b95-b51a-4dc6-b7e9-c0155893bef4">
 
+Index Lifecycle Management
+Start by navigating to the ILM page. Under Stack Management, click Index Lifecycle Policies."ILP"
+In the previous lab, you found that the metrics-apm.app.petclinic-default data stream uses the metrics-apm.app_metrics-default_policy. Search for this policy.
+<img width="1960" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/cc61fec4-8e1e-444b-9262-abff4f5d1a6e">
+<img width="1812" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/efa235fe-6430-41b8-a428-e38bc61279be">
+Default life cycle policy metrics-apm.app_metrics-default_policy
+ <img width="1973" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/6e9940ea-6c95-4e9e-ae8d-e090af8d0115">
 
-
- 
