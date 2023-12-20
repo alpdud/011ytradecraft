@@ -68,7 +68,7 @@ The lab walks you through installing hearbeat on the lab VM and then configuring
 
 3. Lets now create some custom visualizations too.
    ![Alt text](../assets/image-9.png)
-4. Create a visualization thats displays External HTTP Roundtrip latency per domain. It should look something like below. Ofcourse, would change for every individual.
+4. Create a visualization thats displays External HTTP Roundtrip latency per domain. It should look something like below.  
    ![Alt text](../assets/image-10.png)
 
 ___
