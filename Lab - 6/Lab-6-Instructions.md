@@ -14,55 +14,64 @@ In this lab, we will be performing the following:
 
 ## A - Set Up a Single Metric Job
 
-1. Click on the “Machine Learning” link in the Analytics section on the left side of Kibana.
+1. Add sample data into Kibana
+
+   <img width="1609" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/e5eac0eb-5bcc-49ad-a74f-9b4d5af715e7">
+
+
+
+2. Click on the “Machine Learning” link in the Analytics section on the left side of Kibana.
 
 ![](https://lh3.googleusercontent.com/lQkZvEfzqja3vXVjqhAINuWZPFJLgNoePEhLTYTzLy6KqYU4Hrz818RPsbr0M1vn_EMHruayqhsFCrnFFtLZnN9oyxn7n2HpeoM8A1HTc-H-jhUYlXDPROZUiUdaKYzvM7ENhF2zRioumodMGgkIJQ)
 
+<img width="1192" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/96d6a781-e28f-42e9-b9e2-78df89b628f3">
+
+
 And navigate to the Anomaly Detection section.
 
-2. Click on the “**Create Job**” link to set up your first Machine Learning job!![](https://lh4.googleusercontent.com/jddw8mIKqIQ8VEJX_91XyyC1M285fxwdU2AEKfMdwpJ4fb8cDYTHTVSioAAezXFe3HY-um5GedVaQbnDFkBNAAh1Sk1bNEbf51oZfYs24q6945bqQBNTUsToAEAmVY4kUWSyrLKDi9gE5LJyuvaKrA)
+3. Click on the “**Create Job**” link to set up your first Machine Learning job!![](https://lh4.googleusercontent.com/jddw8mIKqIQ8VEJX_91XyyC1M285fxwdU2AEKfMdwpJ4fb8cDYTHTVSioAAezXFe3HY-um5GedVaQbnDFkBNAAh1Sk1bNEbf51oZfYs24q6945bqQBNTUsToAEAmVY4kUWSyrLKDi9gE5LJyuvaKrA)
 
 <!---->
 
-3. Select “kibana\_sample\_data\_logs” index.
+4. Select “kibana\_sample\_data\_logs” index.
 
 \
 ![](https://lh6.googleusercontent.com/sv-wfylnk8foES720V8md_DhyqqOiYIlhVK_l4tBuXbbZkoVIQEjg_iUtA87--2RnP5PSq2IKD15xHN4KCeksk4vAsRY8bnk9yW9riOF0_X8XXzgMh3hEWbLZ5qbA01orc6FbfGmOven5yjOW646Lw)
 
-4. Select the link to create a “**Single metric**” job
+5. Select the link to create a “**Single metric**” job
 
 ![](https://lh4.googleusercontent.com/2P6lfhno8Wp9JPhO5AHQOyx3QzQ0iRzFSrahe0B8wuXD3mXsa_WFWN5pIG58G10brmQ_kfIYMA9kUFTFLBNerHBWFBgTf2pd1YN2X_dJKMklwcGJopDQvZ3xXQZhfetHd9L4qKmMmX2yHBB1K2O0FA)
 
-5. Change the end date in the Time range selector until you have 8 weeks of data, which is the full data set. This date will be some time in the future since this is sample data.
+6. Change the end date in the Time range selector until you have 8 weeks of data, which is the full data set. This date will be some time in the future since this is sample data.
 
 ![](https://lh4.googleusercontent.com/cfUuMHIBHOiU2CPFS5lUkZIUge06X5Wuu1c94cdq4l2XxPDn0YKc0qbldAaoLH4oI55pCJIzB19X-xtjpP_QSk9apHtUmdKLYDUjlZwvTIyZIdeL8VrwtXmTeDD6wfaTMaMj9ildbwOE3Eq22_4ESA)
 
 Please note that your end date will not necessarily be December 31st.
 
-6. Then click on “**Next**”
+7. Then click on “**Next**”
 
 <!---->
 
-7. Select “**low\_count**” function
+8. Select “**low\_count**” function
 
 \
 ![](https://lh5.googleusercontent.com/beyyXCfUF9IthkhYJCIcWiI9IJZYly5yC25ir5XorkT6IRUrkvbIAdFwnQzpZsifKzomT-7OiuwKb6Dl8dJWm_cI4ZZfY9Y4zivtuU3IqZ2Lrb_vzoXQjU6gwc68YfGK1IxFyn4EErPSOiOR1_FD4Q)
 
-8. Enter 1h for the bucket span and click on “**Next**”
+9. Enter 1h for the bucket span and click on “**Next**”
 
 \
 ![](https://lh6.googleusercontent.com/13HUdTgxtsOBS7GPRBZLkMx_1mjTgW7nZB8ryQAXeKMomvBUzOhz60WKN6NSQqbOAkMHk_xhXjE97NVL-5KYNH_rh61qwlSm89tWV7E0ggX03LYese8Wi0IQMPjazWPi6uxYEW1cWHI94RiQJK7fQQ)
 
-9. Enter “lab1a\_low\_web\_traffic” as the Job ID, and “mylabs” as the Group name, then click on the “**Next**” button
+10. Enter “lab1a\_low\_web\_traffic” as the Job ID, and “mylabs” as the Group name, then click on the “**Next**” button
 
 \
 ![](https://lh4.googleusercontent.com/0Nj-edPaYOADbp586Z5wf62J9p6Ub0IgS4zvGpc9KzpX00mBVPcZ8MmRE9lhMs4kCCRJRS4ZN1BA-OxekGE83T8Okk6Fbyi_HFF8xWXY99_zTZtyuj82MtnXQVFhB7539O2DnQyKAWVVYeEL-U-CeQ)
 
-10. The data validation step should pass without problems. Click on the “**Next**” step to proceed.
+11. The data validation step should pass without problems. Click on the “**Next**” step to proceed.
 
 <!---->
 
-11. Review the job configuration, and click on the “**Create Job**” button to start the ML job.
+12. Review the job configuration, and click on the “**Create Job**” button to start the ML job.
 
 ![](https://lh5.googleusercontent.com/EG8I1eTWzhdDWyb7NBtduhJ6sQqgeQwmb04j-WJqC3Jyyg_7bzy9LIxPcLT7_lPU-ecJFrliBMbTbWTYypPMUbto_OfS5z-_XXAU2spkJEj6FjqMsi1XqPK16NeFDM9Y43JuSmqG0apNQ4_tRYv_gg)
 
