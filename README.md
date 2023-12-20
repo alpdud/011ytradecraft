@@ -11,6 +11,6 @@ Following labs are part of the Instructor Led Workshop on Observability Tradecra
 5. [Lab 5](./Lab%20-%205/Lab-5-Instructions.md)
 6. [Lab 6](./Lab%20-%206/Lab-6-Instructions.md)
 7. [Lab 7](./Lab%20-%207/Lab-7-Instructions.md)
-8. [Lab 7](./Lab%20-%208/Lab-8-Instructions.md)
+8. [Lab 8](./Lab%20-%208/Lab-8-Instructions.md)
 
 
