@@ -60,12 +60,25 @@ We will be using the same Elastic Cloud instance provisioned earlier.
    ![Alt text](../assets/image-19.png)
 7. If you now navigate to the Host Overview Dashboard you will see the bundled dashboard with data from the Elastic agent.
    ![Alt text](../assets/image-20.png)
-8. You can also see additional assets which provide insights into system logs and events
+   
+9. You can also see additional assets which provide insights into system logs and events
     <img width="1976" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/52007748-3842-4453-ae3c-1e8bb7c93444">
 
    <img width="1965" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/836e24d7-39d8-4f9a-a782-ca226ec32838">
 
- 
+ 10. You can also check insight into Agent info, health, integration health
+
+  <img width="1254" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/5283f261-a012-490c-95fb-e4ddfc12798c">
+
+  <img width="1968" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/308f9692-8076-445c-9219-ba0cfbcb505c">
+
+  <img width="1954" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/8f6198e9-023c-45d5-b959-3b4b0bcb69af"> 
+
+  <img width="1976" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/258c4e85-ebd6-4e0e-b27f-c4974bef40ed">
+
+
+  
+ 11. 
     
 ---
 ### SLO
