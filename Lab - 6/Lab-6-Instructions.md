@@ -31,3 +31,32 @@ If you click on the number under Linked indices, you will see all the backing in
 Default life cycle policy metrics-apm.app_metrics-default_policy. Click on the name of the policy to edit it and open the Advanced settings of the Hot phase to see its current settings.
  <img width="1973" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/6e9940ea-6c95-4e9e-ae8d-e090af8d0115">
 You should see that a rollover is set when the index is 30 days old or any primary shard reaches 50 gigabytes. We are far from these two conditions. That's why you saw only one index in the previous lab
+
+Edit the hot phase to trigger a rollover after 2 minutes only.
+<img width="667" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/57a0379b-f07c-4314-8105-a19fbb659867">
+
+
+Next, enable the warm phase and move data into this phase after 0 days. This will force your indices into the warm phase right after the rollover. Set the number of replicas to zero to save some space.
+
+<img width="686" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/5a71fdb3-05b0-4a80-9437-3de153f9d46a">
+
+Finally, delete the indices that are older than 1 hour from rollover.
+
+
+<img width="677" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/338615c1-bcc0-432d-b5b9-d17e6a55a58a">
+
+Save the policy.
+
+From the Kibana main menu access Dev Tools and use Console to run the following command, which sets the poll interval for lifecycle policies to 30 seconds:
+
+
+PUT _cluster/settings
+{
+  "persistent": {
+    "indices.lifecycle.poll_interval": "30s"
+  }
+}
+Note: this is far too low for production. The default of 10 minutes is generally acceptable.
+
+
+Navigate to Index Management, and filter the indices to visualize the backing indices of the logs-generic-default data stream. You can use the following query:
