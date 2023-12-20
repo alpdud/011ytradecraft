@@ -59,4 +59,18 @@ PUT _cluster/settings
 Note: this is far too low for production. The default of 10 minutes is generally acceptable.
 
 
-Navigate to Index Management, and filter the indices to visualize the backing indices of the logs-generic-default data stream. You can use the following query:
+Navigate to Index Management, and filter the indices to visualize the backing indices of the data stream. You can use the following query:
+
+Search for "metrics-apm.app.petclinic-default"
+
+<img width="1802" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/3b6e9e2a-09b2-4c89-b476-20889d1cca1c">
+
+
+Wait a bit before hitting the Reload indices button. After a few minutes, you should see that a new backing index has been automatically created.
+
+Open the latest index, and you should see that its current phase is Hot.
+
+<img width="1817" alt="image" src="https://github.com/alpdud/011ytradecraft/assets/116056587/2fb11ca7-c5fe-42ae-bb06-0da38ccd96c1">
+
+
+If you open the other indices that are not the current one, you should see that they are in the Warm phase. After 1 hour, you will eventually see those indices disappear.
