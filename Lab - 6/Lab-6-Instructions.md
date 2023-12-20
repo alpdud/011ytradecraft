@@ -289,7 +289,7 @@ In this lab, we will be performing the following:
 ### A - Import Sample Log Data into Kibana
 
 1. Download the sample log file from:
-   [IT logs sample](./it_ops_app_logs.json)
+   [IT logs sample](Lab - 6/it_ops_app_logs.json) 
 
 2. Go to Kibana > Machine Learning > Data Visualiser. Click on the “Select file” link![](https://lh6.googleusercontent.com/HpkIt9ZDYXszS-yOf5dk7EwEdumLovvu_FtNZYa_re_iIdG1nS3JZrXexvh3DbJDobPn6v-bYruooXM6zJ_LmVfwIrQhpADxrnE8VUn-TUd-KZLVndbaZI7i5fZ057uQ0xcRGUFebdq1tXrL7iIRbg)
 3. Upload the “it\_ops\_app\_logs.json” file from Step 1 above.
